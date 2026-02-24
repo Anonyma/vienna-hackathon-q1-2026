@@ -1158,10 +1158,12 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-right { display: block; border: none; padding: 20px; text-align: center; }
+  .hero-right { display: block; border: var(--border); padding: 0; text-align: center; max-height: none; }
   .hero-right .panel-header { display: none; }
+  .mascot-hero-container { padding: 12px 0; }
   .mascot-hero-container canvas { display: none; }
   .mascot-hero-svg { width: 100px; height: auto; }
+  .about-features { display: none; }
   .tracks-outer-grid { grid-template-columns: 1fr; }
   .tracks-monitor-col { border-right: none; border-bottom: var(--border); min-height: 160px; }
   .tracks-grid { grid-template-columns: 1fr 1fr; }
@@ -1450,7 +1452,7 @@ footer {
           </div>
           <div class="track-body">
             <h3>CYBERSECURITY</h3>
-            <p>Hospitals are the #1 ransomware target. Build defenses for medical infrastructure, health data privacy tools, and secure AI pipelines that keep patients safe.</p>
+            <p>Build agents and tools that defend, detect, and respond. Red team automation, threat intelligence, secure AI pipelines, vulnerability scanners — the future of security is autonomous.</p>
             <div class="track-tags">
               <span class="track-tag">RED TEAM</span>
               <span class="track-tag">THREAT INTEL</span>
@@ -1576,16 +1578,16 @@ footer {
 <!-- ═══════ NEON DIVIDER ═══════ -->
 <div class="neon-divider"></div>
 
+<!-- ═══════ APPLY CTA ═══════ -->
+<div style="text-align:center;padding:48px 24px;border-bottom:var(--border-thick);">
+  <a href="#apply" style="display:inline-block;padding:16px 48px;background:var(--lime);color:var(--black);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.1em;text-decoration:none;text-transform:uppercase;border:none;transition:all 0.2s;">APPLY NOW →</a>
+</div>
+
 <!-- ═══════ BARCODE ═══════ -->
 <div class="barcode-divider">
   <div class="barcode-bars" id="barcodeStrip9"></div>
   <div class="barcode-label">SEC.05 <span class="code">// ORGANIZERS</span></div>
   <div class="barcode-bars" id="barcodeStrip10"></div>
-</div>
-
-<!-- ═══════ APPLY CTA ═══════ -->
-<div style="text-align:center;padding:48px 24px;border-bottom:var(--border-thick);">
-  <a href="#apply" style="display:inline-block;padding:16px 48px;background:var(--lime);color:var(--black);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.1em;text-decoration:none;text-transform:uppercase;border:none;transition:all 0.2s;">APPLY NOW →</a>
 </div>
 
 <!-- ═══════ ORGANIZERS ═══════ -->

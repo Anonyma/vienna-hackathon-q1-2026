@@ -714,7 +714,7 @@ h2 .accent { color: var(--lime); }
 /* ── STATS ── */
 .stats-strip {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border-bottom: var(--border-thick);
 }
 
@@ -1256,14 +1256,14 @@ footer {
         <svg class="mascot-hero-svg" viewBox="0 0 240 280" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="heroBodyGrad" cx="50%" cy="42%" r="55%">
-              <stop offset="0%" stop-color="#e8ff66"/>
-              <stop offset="45%" stop-color="#CCFF00"/>
-              <stop offset="80%" stop-color="#7aad00"/>
-              <stop offset="100%" stop-color="#3a5500"/>
+              <stop offset="0%" stop-color="#f07070"/>
+              <stop offset="45%" stop-color="#ff4747"/>
+              <stop offset="80%" stop-color="#991a1a"/>
+              <stop offset="100%" stop-color="#4a0e0e"/>
             </radialGradient>
             <filter id="heroGlow" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation="14" result="blur"/>
-              <feFlood flood-color="#CCFF00" flood-opacity="0.4" result="color"/>
+              <feFlood flood-color="#ff4747" flood-opacity="0.4" result="color"/>
               <feComposite in="color" in2="blur" operator="in" result="glow"/>
               <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
@@ -1272,9 +1272,9 @@ footer {
               <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
             <radialGradient id="heroEyeGrad" cx="38%" cy="38%" r="55%">
-              <stop offset="0%" stop-color="#5EEAD4"/>
-              <stop offset="60%" stop-color="#2DD4BF"/>
-              <stop offset="100%" stop-color="#0D9488"/>
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="60%" stop-color="#e0e0e0"/>
+              <stop offset="100%" stop-color="#aaaaaa"/>
             </radialGradient>
           </defs>
           <g filter="url(#heroGlow)">
@@ -1321,11 +1321,11 @@ footer {
             </circle>
             <circle id="heroSpecR" cx="140" cy="124" r="3.5" fill="white" opacity="0.75"/>
           </g>
-          <circle cx="96" cy="128" r="9" fill="#2DD4BF" opacity="0.15">
+          <circle cx="96" cy="128" r="9" fill="#ffffff" opacity="0.10">
             <animate attributeName="r" values="9;30;9" dur="3s" repeatCount="indefinite"/>
             <animate attributeName="opacity" values="0.2;0;0.2" dur="3s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="144" cy="128" r="9" fill="#2DD4BF" opacity="0.15">
+          <circle cx="144" cy="128" r="9" fill="#ffffff" opacity="0.10">
             <animate attributeName="r" values="9;30;9" dur="3s" repeatCount="indefinite" begin="0.5s"/>
             <animate attributeName="opacity" values="0.2;0;0.2" dur="3s" repeatCount="indefinite" begin="0.5s"/>
           </circle>
@@ -1657,9 +1657,9 @@ footer {
           <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
         <radialGradient id="ctaEyeGrad" cx="38%" cy="38%" r="55%">
-          <stop offset="0%" stop-color="#e8ff88"/>
-          <stop offset="60%" stop-color="#CCFF00"/>
-          <stop offset="100%" stop-color="#88bb00"/>
+          <stop offset="0%" stop-color="#ffffff"/>
+          <stop offset="60%" stop-color="#e0e0e0"/>
+          <stop offset="100%" stop-color="#aaaaaa"/>
         </radialGradient>
       </defs>
       <!-- Antennae silhouette -->
@@ -1833,7 +1833,7 @@ footer {
         const ch = chars[Math.floor(Math.random() * chars.length)];
         const x = i * 16, y = drops[i] * 16;
         ctx.fillStyle = Math.random() > 0.6 ? '#CCFF00' : 'rgba(180,230,0,0.6)';
-        ctx.globalAlpha = 0.12 + Math.random() * 0.15;
+        ctx.globalAlpha = 0.35 + Math.random() * 0.35;
         ctx.fillText(ch, x, y);
         ctx.globalAlpha = 1;
         if (y > c.height && Math.random() > 0.98) drops[i] = 0;

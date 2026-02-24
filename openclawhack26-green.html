@@ -1158,11 +1158,13 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
+  .top-nav { display: none; }
+  .hero-audience { display: none; }
   .hero-right { display: block; border: var(--border); padding: 0; text-align: center; max-height: none; }
-  .hero-right .panel-header { display: none; }
-  .mascot-hero-container { padding: 12px 0; }
+  .hero-right .panel-header { padding: 6px 14px; font-size: 9px; }
+  .mascot-hero-container { padding: 8px 0; min-height: auto; flex: none; }
   .mascot-hero-container canvas { display: none; }
-  .mascot-hero-svg { width: 100px; height: auto; }
+  .mascot-hero-svg { width: 80px; height: auto; }
   .about-features { display: none; }
   .tracks-outer-grid { grid-template-columns: 1fr; }
   .tracks-monitor-col { border-right: none; border-bottom: var(--border); min-height: 160px; }
@@ -1181,8 +1183,6 @@ footer {
   .sponsor-cell { border-right: none; border-bottom: var(--border); }
   .sponsor-cell:last-child { border-bottom: none; }
   .footer-inner { grid-template-columns: 1fr; }
-  .top-nav { flex-wrap: wrap; }
-  .top-nav a { flex: none; width: 50%; border-bottom: var(--border); }
   #schedule { display: none; }
   #timeline-bar { display: none; }
 }

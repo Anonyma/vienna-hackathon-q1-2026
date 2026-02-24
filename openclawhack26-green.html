@@ -1158,7 +1158,10 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
+  .hero-right { display: block; border: none; padding: 20px; text-align: center; }
+  .hero-right .panel-header { display: none; }
+  .mascot-hero-container canvas { display: none; }
+  .mascot-hero-svg { width: 160px; height: auto; }
   .tracks-outer-grid { grid-template-columns: 1fr; }
   .tracks-monitor-col { border-right: none; border-bottom: var(--border); min-height: 160px; }
   .tracks-grid { grid-template-columns: 1fr 1fr; }
@@ -1167,9 +1170,8 @@ footer {
   .track-cell:last-child { border-bottom: none; }
   .about-grid { grid-template-columns: 1fr; }
   .openclaw-content { grid-template-columns: 1fr; }
-  .stats-strip { grid-template-columns: 1fr 1fr; }
-  .stat-cell:nth-child(2n) { border-right: none; }
-  .stat-cell:nth-child(-n+2) { border-bottom: var(--border); }
+  .openclaw-visual { max-height: 150px; }
+  .stats-strip { display: none; }
   .organizers-grid { grid-template-columns: 1fr; }
   .organizer-cell { border-right: none; border-bottom: var(--border); }
   .organizer-cell:last-child { border-bottom: none; }
@@ -1179,19 +1181,14 @@ footer {
   .footer-inner { grid-template-columns: 1fr; }
   .top-nav { flex-wrap: wrap; }
   .top-nav a { flex: none; width: 50%; border-bottom: var(--border); }
-  .schedule-phases { grid-template-columns: 1fr; }
-  .phase-block { border-right: none; border-bottom: var(--border); }
-  .phase-block:last-child { border-bottom: none; }
-  .schedule-table .event-type { display: none; }
+  #schedule { display: none; }
 }
 
 @media (max-width: 600px) {
   .tracks-grid { grid-template-columns: 1fr; }
   .track-cell { border-right: none; border-bottom: var(--border); }
   .track-cell:last-child { border-bottom: none; }
-  .stats-strip { grid-template-columns: 1fr; }
-  .stat-cell { border-right: none; border-bottom: var(--border); }
-  .stat-cell:last-child { border-bottom: none; }
+
   .cta-form { flex-direction: column; }
   .cta-form button { border-left: none; border-top: var(--border-thick); }
   .hero { padding: 50px 16px 40px; }
@@ -1366,20 +1363,20 @@ footer {
     <div class="about-grid">
       <div class="about-text reveal-left">
         <p>
-          <strong>OpenClaw Hack_001</strong> is Vienna's first overnight agent hackathon — a 24-hour build sprint where <strong>AI agents meet real-world problems</strong>. Cybersecurity, bio & medicine, autonomous systems — pick your track and ship.
+          <strong>OpenClaw Hack_001</strong> is Vienna's first overnight agent hackathon — a 24-hour build sprint where <strong>AI agents meet real-world problems</strong>.
         </p>
         <p>
           No pitch decks. No investor panels. Just <strong>24 hours of raw building</strong> — shipping agents, tools, and prototypes that actually work. Bring your own stack, your own model, your own ideas. We provide the space, the mentors, and the infrastructure.
         </p>
         <p>
-          Newcomers welcome. We run dedicated <strong>workshop tracks</strong> so everyone can contribute — from first-time hackers to seasoned agent builders.
+          Newcomers welcome — we run <strong>workshop tracks</strong> for all levels.
         </p>
       </div>
       <div class="about-features reveal-right">
         <div class="about-feature">
           <div class="icon">⬡</div>
           <h4>BUILD REAL AGENTS</h4>
-          <p>Ship working prototypes, not slide decks. Autonomous systems that solve actual problems.</p>
+          <p>Ship working prototypes, not slide decks.</p>
         </div>
         <div class="about-feature">
           <div class="icon circle">◎</div>
@@ -1394,7 +1391,7 @@ footer {
         <div class="about-feature">
           <div class="icon">▣</div>
           <h4>OPEN SOURCE</h4>
-          <p>All projects built on open-source foundations. Your work joins the OpenClaw ecosystem.</p>
+          <p>All projects built on open-source foundations.</p>
         </div>
       </div>
     </div>
@@ -1565,9 +1562,6 @@ footer {
           <strong>OpenClaw</strong> is an open-source initiative building tools at the intersection of AI agents and real-world impact. The project believes the most powerful technology should be <strong>free, auditable, and community-driven</strong>.
         </p>
         <p>
-          The platform provides frameworks for building autonomous agents — from multi-agent orchestration to tool-use pipelines. Every project at this hackathon contributes back to the OpenClaw ecosystem, creating a growing library of <strong>open-source agent tools</strong> that anyone can deploy.
-        </p>
-        <p>
           The mission is simple: <strong>make agent infrastructure accessible to everyone.</strong> No paywalls. No lock-in. Just code that works, built by builders, deployed where it's needed most.
         </p>
       </div>
@@ -1615,6 +1609,11 @@ footer {
   <div class="barcode-bars" id="barcodeStrip11"></div>
   <div class="barcode-label">SEC.06 <span class="code">// SPONSORS</span></div>
   <div class="barcode-bars" id="barcodeStrip12"></div>
+</div>
+
+<!-- ═══════ APPLY CTA ═══════ -->
+<div style="text-align:center;padding:48px 24px;border-bottom:var(--border-thick);">
+  <a href="#apply" style="display:inline-block;padding:16px 48px;background:var(--lime);color:var(--black);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.1em;text-decoration:none;text-transform:uppercase;border:none;transition:all 0.2s;">APPLY NOW →</a>
 </div>
 
 <!-- ═══════ SPONSORS ═══════ -->

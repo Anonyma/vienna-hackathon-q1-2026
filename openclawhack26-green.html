@@ -745,8 +745,8 @@ h2 .accent { color: var(--lime); }
 /* ── OPENCLAW SECTION ── */
 .openclaw-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
   align-items: start;
 }
 
@@ -1161,7 +1161,7 @@ footer {
   .hero-right { display: block; border: none; padding: 20px; text-align: center; }
   .hero-right .panel-header { display: none; }
   .mascot-hero-container canvas { display: none; }
-  .mascot-hero-svg { width: 160px; height: auto; }
+  .mascot-hero-svg { width: 100px; height: auto; }
   .tracks-outer-grid { grid-template-columns: 1fr; }
   .tracks-monitor-col { border-right: none; border-bottom: var(--border); min-height: 160px; }
   .tracks-grid { grid-template-columns: 1fr 1fr; }
@@ -1182,6 +1182,7 @@ footer {
   .top-nav { flex-wrap: wrap; }
   .top-nav a { flex: none; width: 50%; border-bottom: var(--border); }
   #schedule { display: none; }
+  #timeline-bar { display: none; }
 }
 
 @media (max-width: 600px) {
@@ -1381,7 +1382,7 @@ footer {
         <div class="about-feature">
           <div class="icon circle">◎</div>
           <h4>EXPERT MENTORS</h4>
-          <p>Agent builders, security researchers, and domain experts on-site throughout the event.</p>
+          <p>Agent builders, security researchers, and domain experts.</p>
         </div>
         <div class="about-feature">
           <div class="icon">△</div>
@@ -1499,7 +1500,7 @@ footer {
 <div class="neon-divider alt"></div>
 
 <!-- ═══════ BARCODE ═══════ -->
-<div class="barcode-divider">
+<div class="barcode-divider" id="timeline-bar">
   <div class="barcode-bars" id="barcodeStrip5"></div>
   <div class="barcode-label">SEC.03 <span class="code">// TIMELINE</span></div>
   <div class="barcode-bars" id="barcodeStrip6"></div>
@@ -1582,6 +1583,11 @@ footer {
   <div class="barcode-bars" id="barcodeStrip10"></div>
 </div>
 
+<!-- ═══════ APPLY CTA ═══════ -->
+<div style="text-align:center;padding:48px 24px;border-bottom:var(--border-thick);">
+  <a href="#apply" style="display:inline-block;padding:16px 48px;background:var(--lime);color:var(--black);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.1em;text-decoration:none;text-transform:uppercase;border:none;transition:all 0.2s;">APPLY NOW →</a>
+</div>
+
 <!-- ═══════ ORGANIZERS ═══════ -->
 <section class="section" id="organizers">
   <div class="section-inner reveal">
@@ -1609,11 +1615,6 @@ footer {
   <div class="barcode-bars" id="barcodeStrip11"></div>
   <div class="barcode-label">SEC.06 <span class="code">// SPONSORS</span></div>
   <div class="barcode-bars" id="barcodeStrip12"></div>
-</div>
-
-<!-- ═══════ APPLY CTA ═══════ -->
-<div style="text-align:center;padding:48px 24px;border-bottom:var(--border-thick);">
-  <a href="#apply" style="display:inline-block;padding:16px 48px;background:var(--lime);color:var(--black);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.1em;text-decoration:none;text-transform:uppercase;border:none;transition:all 0.2s;">APPLY NOW →</a>
 </div>
 
 <!-- ═══════ SPONSORS ═══════ -->
@@ -1819,23 +1820,25 @@ footer {
     function resize() {
       c.width = c.offsetWidth * 2;
       c.height = c.offsetHeight * 2;
-      const fs = 16;
+      const fs = 14;
       cols = Math.floor(c.width / fs);
       drops = new Array(cols).fill(0).map(() => Math.floor(Math.random() * (c.height / fs)));
     }
     resize();
     window.addEventListener('resize', resize);
     function draw() {
-      ctx.clearRect(0, 0, c.width, c.height);
-      ctx.font = '16px "IBM Plex Mono", monospace';
+      ctx.fillStyle = 'rgba(10,10,10,0.07)';
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.font = '14px "IBM Plex Mono", monospace';
       for (let i = 0; i < cols; i++) {
         const ch = chars[Math.floor(Math.random() * chars.length)];
-        const x = i * 16, y = drops[i] * 16;
-        ctx.fillStyle = Math.random() > 0.6 ? '#CCFF00' : 'rgba(180,230,0,0.6)';
-        ctx.globalAlpha = 0.35 + Math.random() * 0.35;
+        const x = i * 14, y = drops[i] * 14;
+        const bright = Math.random() > 0.85;
+        ctx.fillStyle = bright ? 'rgba(204,255,0,0.9)' : 'rgba(204,255,0,0.25)';
+        ctx.globalAlpha = 0.35 + Math.random() * 0.45;
         ctx.fillText(ch, x, y);
         ctx.globalAlpha = 1;
-        if (y > c.height && Math.random() > 0.98) drops[i] = 0;
+        if (y > c.height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
       }
       requestAnimationFrame(draw);
